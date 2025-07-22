@@ -5,17 +5,13 @@ from tkinter import ttk
 from .basic_page import Page
 
 class SettingsPage(Page):
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, theme_manager=None):
         # initialize the Frame class
-        super().__init__(parent, controller)
+        super().__init__(parent, controller, theme_manager)
 
         # create the title bar and content area
-        self.title_bar("Settings", show_back=True)
+        self.title_bar("Settings", show_back=True, show_settings=False)
         self.content_area()
-    
-    def title_bar(self, title, show_back):
-        """ Create a title bar for the home page """
-        super().title_bar(title, show_back)
     
     def content_area(self):
         """ Create the content area for the settings page """
